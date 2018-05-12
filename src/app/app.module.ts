@@ -10,12 +10,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AcudeProvider } from '../providers/acude/acude';
 import { AcudeDetalhePage } from '../pages/acude-detalhe/acude-detalhe';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    AcudeDetalhePage
+    AcudeDetalhePage,
+    FavoritosPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { AcudeDetalhePage } from '../pages/acude-detalhe/acude-detalhe';
   entryComponents: [
     MyApp,
     HomePage,
-    AcudeDetalhePage
+    AcudeDetalhePage,
+    FavoritosPage
   ],
   providers: [
     StatusBar,

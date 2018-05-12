@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController} from 'ionic-angular';
 import { Acude } from  '../../models/acude';
 import { Storage } from '@ionic/storage';
+import { AcudeProvider } from '../../providers/acude/acude';
 
 /**
  * Generated class for the AcudeDetalhePage page.
@@ -19,7 +20,7 @@ export class AcudeDetalhePage {
 	private acude: Acude;
 	private favorito;
   constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
-  				public toastCtrl: ToastController) {
+  				public toastCtrl: ToastController, public acProvider: AcudeProvider) {
   	this.acude = this.navParams.get('acudeSelecionado');
   	
   	storage.get('favorito'+this.acude.nome).then((resultado) => {
@@ -40,6 +41,7 @@ export class AcudeDetalhePage {
   addFavorito() {
   	this.storage.set('favorito' + this.acude.nome, true).then((result) => {
   		this.favorito = result;
+  		this.acProvider.getFavoritos();
   		this.showToast('Adicionado aos favoritos!');
   	});
   }
@@ -47,6 +49,7 @@ export class AcudeDetalhePage {
   remFavorito() {
   	this.storage.set('favorito' + this.acude.nome, false).then((result) => {
   		this.favorito = result;
+  		this.acProvider.getFavoritos();
   		this.showToast('Removido dos favoritos!');
   	});
   }

@@ -23,6 +23,12 @@
  	<ion-item><strong>Ano de construção:</strong> {{acude.anoconstrucao}}</ion-item>
  	<ion-item><strong>Favorito?</strong> {{favorito}}</ion-item>
  	<br>
- 	<button ion-button full (click)="addFavorito()" *ngIf="!favorito">Adicionar aos favoritos</button>
- 	<button ion-button full (click)="remFavorito()" *ngIf="favorito">Remover dos favoritos</button>
+ 	<button ion-button full (click)="addFavorito()" *ngIf="!favorito" icon-right>
+ 		Adicionar aos favoritos
+ 		<ion-icon name="add"></ion-icon>
+ 	</button>
+ 	<button ion-button full (click)="remFavorito()" *ngIf="favorito" color="danger" icon-right>
+ 		Remover dos favoritos
+ 		<ion-icon name="trash"></ion-icon>
+ 	</button>
 </ion-content>
