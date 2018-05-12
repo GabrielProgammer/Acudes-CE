@@ -1,0 +1,54 @@
+{
+  "Acude": [
+    {
+      "id": 1,
+      "nome": "Castanhão",
+      "nomeoficial": "Açude Público Padre Cícero",
+      "municipio": " Alto Santo m3",
+      "capacidade": " 6.700.000.000 m3",
+      "volumeatual": "8,70 %",
+      "anoconstrucao": "23 de dezembro de 2002",
+      "foto": "castanhao.png"
+    },
+    {
+      "id": 2,
+      "nome": "Orós",
+      "nomeoficial": "Açude Presidente Juscelino Kubitschek de Oliveira ",
+      "municipio": " Orós m3",
+      "capacidade": "2.100.000.00 m3",
+      "volumeatual": "9,74 %",
+      "anoconstrucao": "11 de janeiro de 1961",
+      "foto": "oros.jpg"
+    },
+    {
+      "id": 3,
+      "nome": " Banabuiú",
+      "nomeoficial": "Arrojado Lisboa",
+      "municipio": " Banabuiú",
+      "capacidade": "1.700.000.00 m3",
+      "volumeatual": "6,63 %",
+      "anoconstrucao": "1966",
+      "foto": "banabuiu.jpg"
+    },
+    {
+      "id": 4,
+      "nome": "Cedro",
+      "nomeoficial": "Açude do Cedro",
+      "municipio": " Quixadá m3",
+      "capacidade": "125.700.000 m3",
+      "volumeatual": "2,05 %",
+      "anoconstrucao": "1906",
+      "foto": "cedro.jpg"
+    },
+    {
+      "nome": "Júvenal",
+      "nomeoficial": "Açude do júvenal",
+      "municipio": "Maranguape m3",
+      "capacidade": "2.000.000 m3",
+      "volumeatual": "5,08 %",
+      "anoconstrucao": "1980",
+      "foto": "juvenal.jpg",
+      "id": 5
+    }
+  ]
+}

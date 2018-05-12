@@ -1,0 +1,8 @@
+{
+  "name": "acudes",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Açudes - CE
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  	<ion-item *ngFor='let x of acudes' (click)="infoAcudeSelecionado(x)">
+  		<ion-avatar item-start>
+  			<img src="../../assets/imgs/acudes/{{x.foto}}">
+  		</ion-avatar>
+  		<h3><b>Nome: </b>{{ x.nome }}</h3>
+  	</ion-item>
+</ion-content>
