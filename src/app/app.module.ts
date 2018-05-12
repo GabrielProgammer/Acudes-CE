@@ -11,12 +11,14 @@ import { HomePage } from '../pages/home/home';
 import { AcudeProvider } from '../providers/acude/acude';
 import { AcudeDetalhePage } from '../pages/acude-detalhe/acude-detalhe';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
+import { SearchPipe } from '../pipes/search/search';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     AcudeDetalhePage,
+     SearchPipe,
     FavoritosPage
   ],
   imports: [

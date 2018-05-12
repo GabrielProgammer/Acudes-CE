@@ -7,12 +7,17 @@
 </ion-header>
 
 <ion-content padding>
-  	<ion-item *ngFor='let x of acudes' (click)="infoAcudeSelecionado(x)">
+
+	 <ion-searchbar [(ngModel)]="terms" placeholder="Pesquisar..."></ion-searchbar>
+	 <ion-list>
+	 
+	 
+  	<ion-item *ngFor='let x of acudes | search: terms' (click)="infoAcudeSelecionado(x)">
   		<ion-avatar item-start>
   			<img src="../../assets/imgs/acudes/{{x.foto}}">
   		</ion-avatar>
   		<h3><b>Nome: </b>{{ x.nome }}</h3>
   	</ion-item>
-
+</ion-list>
   	<button ion-button full (click)="favoritosPage()" color="secondary">Ver meus favoritos</button>
 </ion-content>
