@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, ToastController} from 'ionic-angul
 import { Acude } from  '../../models/acude';
 import { Storage } from '@ionic/storage';
 import { AcudeProvider } from '../../providers/acude/acude';
+import { FotoSlidePage } from '../foto-slide/foto-slide';
+
 
 /**
  * Generated class for the AcudeDetalhePage page.
@@ -52,5 +54,9 @@ export class AcudeDetalhePage {
   		this.acProvider.getFavoritos();
   		this.showToast('Removido dos favoritos!');
   	});
+  }
+
+  fotoSlidePage(acude) {
+  	this.navCtrl.push(FotoSlidePage, {fotoAcude: acude});
   }
 }

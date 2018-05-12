@@ -14,7 +14,7 @@
 	 
   	<ion-item *ngFor='let x of acudes | search: terms' (click)="infoAcudeSelecionado(x)">
   		<ion-avatar item-start>
-  			<img src="../../assets/imgs/acudes/{{x.foto}}">
+  			<img src="../../assets/imgs/acudes/{{x.id}}/{{x.foto}}">
   		</ion-avatar>
   		<h3><b>Nome: </b>{{ x.nome }}</h3>
   	</ion-item>

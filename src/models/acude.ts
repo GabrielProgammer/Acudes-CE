@@ -7,4 +7,5 @@ export class Acude {
 	volumeAtual: string;
 	anoConstrucao: string;
 	foto: string;
+	fotos: Array<string>
 }

@@ -12,6 +12,7 @@ import { AcudeProvider } from '../providers/acude/acude';
 import { AcudeDetalhePage } from '../pages/acude-detalhe/acude-detalhe';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { SearchPipe } from '../pipes/search/search';
+import { FotoSlidePage } from '../pages/foto-slide/foto-slide';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SearchPipe } from '../pipes/search/search';
     HomePage,
     AcudeDetalhePage,
      SearchPipe,
-    FavoritosPage
+    FavoritosPage,
+    FotoSlidePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SearchPipe } from '../pipes/search/search';
     MyApp,
     HomePage,
     AcudeDetalhePage,
-    FavoritosPage
+    FavoritosPage,
+    FotoSlidePage
   ],
   providers: [
     StatusBar,
