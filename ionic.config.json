@@ -1,6 +1,6 @@
 {
   "name": "acudes",
-  "app_id": "7c87ffd1",
+  "app_id": "",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
