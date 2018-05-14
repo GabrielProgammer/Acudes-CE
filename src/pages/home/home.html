@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
 	 <ion-searchbar [(ngModel)]="terms" placeholder="Pesquisar..."></ion-searchbar>
 	 <ion-list>
@@ -19,5 +19,7 @@
   		<h3><b>Nome: </b>{{ x.nome }}</h3>
   	</ion-item>
 </ion-list>
-  	<button ion-button full (click)="favoritosPage()" color="secondary">Ver meus favoritos</button>
+  <ion-fab bottom right>
+    <button ion-fab mini (click)="favoritosPage()"><ion-icon name="bookmark"></ion-icon></button>
+  </ion-fab>  
 </ion-content>

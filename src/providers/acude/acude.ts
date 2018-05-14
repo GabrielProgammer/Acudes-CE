@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Acude } from '../../models/acude';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/storage';
+import { ToastController } from 'ionic-angular';
 
 /*
   Generated class for the AcudeProvider provider.
@@ -15,7 +16,8 @@ export class AcudeProvider {
 	public apiKey: string;
 	public acudes: Acude[] = Array();
 	public favoritos: Acude[] = Array();
-  constructor(public http: HttpClient, public storage: Storage) {
+  constructor(public http: HttpClient, public storage: Storage, 
+    public toastCtrl: ToastController) {
   	this.apiKey = 'https://demo7908592.mockable.io/acudes';
   	this.getAcudesAPI().subscribe(res => {this.acudes = res});
   }
@@ -36,5 +38,15 @@ export class AcudeProvider {
   		}
   		console.log(this.favoritos);
   		return this.favoritos;
+  }
+
+   showToast(message) {
+    let toast = this.toastCtrl.create({
+        message: message,
+        duration: 1500,
+        position: 'bottom',
+        //cssClass: 'toast'
+    });
+    toast.present(toast);
   }
 }

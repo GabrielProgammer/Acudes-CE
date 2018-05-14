@@ -30,21 +30,11 @@ export class AcudeDetalhePage {
   	});	
   }
 
-  showToast(message) {
-  	let toast = this.toastCtrl.create({
-        message: message,
-        duration: 1500,
-        position: 'bottom',
-        //cssClass: 'toast'
-    });
-    toast.present(toast);
-  }
-
   addFavorito() {
   	this.storage.set('favorito' + this.acude.nome, true).then((result) => {
   		this.favorito = result;
   		this.acProvider.getFavoritos();
-  		this.showToast('Adicionado aos favoritos!');
+  		this.acProvider.showToast('Adicionado aos favoritos!');
   	});
   }
 
@@ -52,7 +42,7 @@ export class AcudeDetalhePage {
   	this.storage.set('favorito' + this.acude.nome, false).then((result) => {
   		this.favorito = result;
   		this.acProvider.getFavoritos();
-  		this.showToast('Removido dos favoritos!');
+  		this.acProvider.showToast('Removido dos favoritos!');
   	});
   }
 

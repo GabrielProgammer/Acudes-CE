@@ -7,18 +7,27 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>favoritos</ion-title>
+    <ion-title>
+      Meus favoritos 
+      <ion-icon name="star"></ion-icon>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<h2 text-center>Meus favoritos</h2>
-  	<ion-item *ngFor='let x of favoritos' (click)="infoAcudeSelecionado(x)">
+	<img  *ngIf="favoritos.length == 0" src="../../assets/imgs/nenhum-favorito.png" class="noFav">
+  	<ion-item *ngFor='let x of favoritos'>
   		<ion-avatar item-start>
   			<img src="../../assets/imgs/acudes/{{x.id}}/{{x.foto}}">
   		</ion-avatar>
   		<h3><b>Nome: </b>{{ x.nome }}</h3>
+      <button ion-button icon-only outline item-end (click)="remFavorito(x.nome)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+      <button ion-button icon-only outline item-end (click)="infoAcudeSelecionado(x)">
+        <ion-icon name="expand"></ion-icon>
+      </button>
   	</ion-item>
 </ion-content>

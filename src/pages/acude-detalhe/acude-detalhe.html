@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Detalhes</ion-title>
+    <ion-title>
+    	Detalhes
+    	<ion-icon name="globe"></ion-icon>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,7 +28,7 @@
  	<br>
  	<button ion-button full (click)="addFavorito()" *ngIf="!favorito" icon-right>
  		Adicionar aos favoritos
- 		<ion-icon name="add"></ion-icon>
+ 		<ion-icon name="star"></ion-icon>
  	</button>
  	<button ion-button full (click)="remFavorito()" *ngIf="favorito" color="danger" icon-right>
  		Remover dos favoritos
