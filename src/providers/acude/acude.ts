@@ -35,7 +35,7 @@ export class AcudeProvider {
   				if (resposta)
   					this.favoritos.push(this.acudes[i]);
   			}) 
-  		}
+  		};
   		console.log(this.favoritos);
   		return this.favoritos;
   }

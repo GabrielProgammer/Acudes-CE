@@ -13,6 +13,8 @@ import { AcudeDetalhePage } from '../pages/acude-detalhe/acude-detalhe';
 import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { SearchPipe } from '../pipes/search/search';
 import { FotoSlidePage } from '../pages/foto-slide/foto-slide';
+import { MeuPerfilPage } from '../pages/meu-perfil/meu-perfil';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { FotoSlidePage } from '../pages/foto-slide/foto-slide';
     AcudeDetalhePage,
      SearchPipe,
     FavoritosPage,
-    FotoSlidePage
+    FotoSlidePage,
+    MeuPerfilPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { FotoSlidePage } from '../pages/foto-slide/foto-slide';
     HomePage,
     AcudeDetalhePage,
     FavoritosPage,
-    FotoSlidePage
+    FotoSlidePage,
+    MeuPerfilPage
   ],
   providers: [
     StatusBar,

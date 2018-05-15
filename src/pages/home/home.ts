@@ -5,6 +5,7 @@ import { Acude } from '../../models/acude';
 import { AcudeDetalhePage } from '../acude-detalhe/acude-detalhe';
 import { FavoritosPage } from '../favoritos/favoritos';
 import { Storage } from '@ionic/storage';
+import { MeuPerfilPage } from '../meu-perfil/meu-perfil';
 
 @Component({
   selector: 'page-home',
@@ -22,6 +23,8 @@ export class HomePage {
    });
    this.load.present();
 
+   this.storage.set('nomeUser', 'Gabriel').then((res) => console.log(res));
+
   	this.acProvider.getAcudesAPI().subscribe(resposta => {
       this.load.dismiss();
   		this.acudes = resposta; 
@@ -36,5 +39,9 @@ export class HomePage {
 
   favoritosPage() {
   	this.navCtrl.push(FavoritosPage);
+  }
+
+  meuPerfil() {
+    this.navCtrl.push(MeuPerfilPage);
   }
 }

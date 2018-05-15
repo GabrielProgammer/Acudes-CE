@@ -16,9 +16,18 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content class="card-background-page"> 
 	<img  *ngIf="semFavs" src="../../assets/imgs/nenhum-favorito.png" class="noFav">
-  	<ion-item *ngFor='let x of favoritos'>
+  <ion-card *ngFor='let x of favoritos'>
+    <img src="../../assets/imgs/acudes/{{x.id}}/{{x.foto}}"/>
+    <div class="card-title">{{ x.nome }}</div>
+    <div class="card-subtitle">  <button ion-button small round icon-start (click)="remFavorito(x.nome)" color="light">
+        <ion-icon name="trash"></ion-icon>
+      </button><button  ion-button round icon-start small  color="light" (click)="infoAcudeSelecionado(x)">
+        <ion-icon name="expand"></ion-icon>
+      </button></div>
+  </ion-card>
+  <!-- 	<ion-item *ngFor='let x of favoritos'>
   		<ion-avatar item-start>
   			<img src="../../assets/imgs/acudes/{{x.id}}/{{x.foto}}">
   		</ion-avatar>
@@ -29,5 +38,5 @@
       <button ion-button icon-only outline item-end (click)="infoAcudeSelecionado(x)">
         <ion-icon name="expand"></ion-icon>
       </button>
-  	</ion-item>
+  	</ion-item> -->
 </ion-content>
