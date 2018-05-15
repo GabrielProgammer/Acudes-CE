@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { Acude } from '../../models/acude';
 import { AcudeProvider } from '../../providers/acude/acude';
 import { Storage } from '@ionic/storage';
@@ -20,9 +20,13 @@ import { AcudeDetalhePage } from '../acude-detalhe/acude-detalhe';
 })
 export class FavoritosPage {
 	private favoritos: Acude[] = Array();
+	private semFavs: boolean = true;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, 
   	public acProvider: AcudeProvider, public storage: Storage) {
   	this.favoritos = acProvider.favoritos;
+  	if (this.favoritos.length > 0)
+  		this.semFavs = false;
   }
 
   ionViewDidLoad() {
@@ -31,10 +35,11 @@ export class FavoritosPage {
 
   remFavorito(acude) {
   	console.log(acude);
-  	this.storage.set('favorito'+acude, false).then((result) => 
-  		this.favoritos = this.acProvider.getFavoritos());
-  	this.acProvider.showToast('Removido dos favoritos!');
-  }
+  	this.storage.set('favorito'+acude, false).then((result) => {
+  		this.favoritos = this.acProvider.getFavoritos();
+  		this.acProvider.showToast('Removido dos favoritos!');
+  	});
+ 	}
 
 	infoAcudeSelecionado(x) {
 		this.navCtrl.push(AcudeDetalhePage, {acudeSelecionado: x});

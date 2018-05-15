@@ -24,7 +24,6 @@
  	<ion-item><strong>Capacidade:</strong> {{acude.capacidade}}</ion-item>
  	<ion-item><strong>Volume atual:</strong> {{acude.volumeatual}}</ion-item>
  	<ion-item><strong>Ano de construção:</strong> {{acude.anoconstrucao}}</ion-item>
- 	<ion-item><strong>Favorito?</strong> {{favorito}}</ion-item>
  	<br>
  	<button ion-button full (click)="addFavorito()" *ngIf="!favorito" icon-right>
  		Adicionar aos favoritos
@@ -34,4 +33,7 @@
  		Remover dos favoritos
  		<ion-icon name="trash"></ion-icon>
  	</button>
+ 	<ion-fab bottom right>
+    <button ion-fab mini (click)="favoritosPage()"><ion-icon name="bookmark"></ion-icon></button>
+  </ion-fab>  
 </ion-content>

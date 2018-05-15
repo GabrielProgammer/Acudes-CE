@@ -17,7 +17,7 @@
 
 
 <ion-content padding>
-	<img  *ngIf="favoritos.length == 0" src="../../assets/imgs/nenhum-favorito.png" class="noFav">
+	<img  *ngIf="semFavs" src="../../assets/imgs/nenhum-favorito.png" class="noFav">
   	<ion-item *ngFor='let x of favoritos'>
   		<ion-avatar item-start>
   			<img src="../../assets/imgs/acudes/{{x.id}}/{{x.foto}}">

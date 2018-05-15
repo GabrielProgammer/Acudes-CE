@@ -4,7 +4,7 @@ import { Acude } from  '../../models/acude';
 import { Storage } from '@ionic/storage';
 import { AcudeProvider } from '../../providers/acude/acude';
 import { FotoSlidePage } from '../foto-slide/foto-slide';
-
+import { FavoritosPage } from '../favoritos/favoritos';
 
 /**
  * Generated class for the AcudeDetalhePage page.
@@ -48,5 +48,9 @@ export class AcudeDetalhePage {
 
   fotoSlidePage(acude) {
   	this.navCtrl.push(FotoSlidePage, {fotoAcude: acude});
+  }
+
+  favoritosPage() {
+    this.navCtrl.push(FavoritosPage);
   }
 }

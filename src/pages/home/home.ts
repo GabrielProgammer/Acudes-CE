@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { NavController, IonicPage, LoadingController } from 'ionic-angular';
 import { AcudeProvider } from '../../providers/acude/acude';
 import { Acude } from '../../models/acude';
 import { AcudeDetalhePage } from '../acude-detalhe/acude-detalhe';
@@ -13,8 +13,17 @@ import { Storage } from '@ionic/storage';
 export class HomePage {
 	public acudes: Acude[] = Array();
 	private qtdAcudes;
-  constructor(public navCtrl: NavController, public acProvider: AcudeProvider, public storage: Storage) {
+  private load;
+
+  constructor(public navCtrl: NavController, public acProvider: AcudeProvider,
+     public storage: Storage, public loadingCtrl: LoadingController) {
+    this.load = this.loadingCtrl.create({
+     content: 'Obtendo a lista de açudes, por favor aguarde...'
+   });
+   this.load.present();
+
   	this.acProvider.getAcudesAPI().subscribe(resposta => {
+      this.load.dismiss();
   		this.acudes = resposta; 
   		console.log(this.acudes);
   		this.acProvider.getFavoritos();
