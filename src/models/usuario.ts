@@ -1,5 +1,7 @@
 export class Usuario {
 	nome: string;
 	qtdFavoritos: number;
-	avatar: string
+	avatar: string;
+	id: number;
+	idade: number
 }

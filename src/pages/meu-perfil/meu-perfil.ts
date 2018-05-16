@@ -20,12 +20,15 @@ export class MeuPerfilPage {
 	public userInfo: Usuario = {
 		nome: '',
 		qtdFavoritos: null,
-		avatar: 'avatar.jpg'
+		avatar: 'avatar.png',
+    idade: null,
+    id: null
 	};
   constructor(public navCtrl: NavController, public navParams: NavParams,
    public storage: Storage, public acProvider: AcudeProvider) {
   	this.storage.get("nomeUser").then((res) => {this.userInfo.nome = res;});
   	this.userInfo.qtdFavoritos =  this.acProvider.favoritos.length;
+    this.storage.get("idadeUser").then((res) => this.userInfo.idade = res);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MeuPerfilPage');
