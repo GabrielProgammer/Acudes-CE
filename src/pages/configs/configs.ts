@@ -29,7 +29,7 @@ export class ConfigsPage {
   	let qtdFavs: number = this.acProvider.favoritos.length;
   	console.log(qtdFavs);
 
-  	if (qtdFavs > 0)
+  	if (qtdFavs > 0){
 	  	for (let i = 0; i < qtdFavs; i++){
 	  		if (qtdFavs - i == 1 ) //Evita chamar a funcão getFavoritos a cada iteração		
 	  			this.storage.set('favorito'+this.acProvider.favoritos[i].nome, false)
@@ -37,6 +37,8 @@ export class ConfigsPage {
 	  		else 
 	  			this.storage.set('favorito'+this.acProvider.favoritos[i].nome, false);
 	  	}
+	  	this.acProvider.showToast('Todos os favoritos foram removidos!');
+	  }
 	else 
 		this.acProvider.showToast('Primeiro adicione pelo menos 1 favorito :D');
   }

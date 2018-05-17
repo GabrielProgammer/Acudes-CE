@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, IonicPage, LoadingController } from 'ionic-angular';
+import { NavController, IonicPage, LoadingController, AlertController } from 'ionic-angular';
 import { AcudeProvider } from '../../providers/acude/acude';
 import { Acude } from '../../models/acude';
 import { AcudeDetalhePage } from '../acude-detalhe/acude-detalhe';
@@ -18,7 +18,8 @@ export class HomePage {
   private load;
 
   constructor(public navCtrl: NavController, public acProvider: AcudeProvider,
-     public storage: Storage, public loadingCtrl: LoadingController) {
+     public storage: Storage, public loadingCtrl: LoadingController,
+     public alertCtrl: AlertController) {
     this.load = this.loadingCtrl.create({
      content: 'Obtendo a lista de açudes, por favor aguarde...'
    });
@@ -31,7 +32,22 @@ export class HomePage {
   		this.acudes = resposta; 
   		console.log(this.acudes);
   		this.acProvider.getFavoritos();
-  	});
+  	},
+
+    Error => {
+      this.load.dismiss();
+      this.showAlert();
+    }
+    );
+  }
+
+  showAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Ops...',
+      subTitle: 'Não foi possível obter a lista de açudes. Por favor tente mais tarde.',
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
   infoAcudeSelecionado(x) {
