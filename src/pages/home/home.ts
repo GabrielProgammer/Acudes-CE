@@ -6,6 +6,7 @@ import { AcudeDetalhePage } from '../acude-detalhe/acude-detalhe';
 import { FavoritosPage } from '../favoritos/favoritos';
 import { Storage } from '@ionic/storage';
 import { MeuPerfilPage } from '../meu-perfil/meu-perfil';
+import { ConfigsPage } from '../configs/configs';
 
 @Component({
   selector: 'page-home',
@@ -43,5 +44,9 @@ export class HomePage {
 
   meuPerfil() {
     this.navCtrl.push(MeuPerfilPage);
+  }
+
+  configuracoes() {
+    this.navCtrl.push(ConfigsPage);
   }
 }

@@ -10,17 +10,16 @@
 	<ion-slides pager>
 
   <ion-slide>
-    <h2>Bem-vindo!</h2>
+    <img src="../../assets/imgs/bem-vindo2.png"style="width:100%">
   </ion-slide>
 
   <ion-slide>
-    <h3>Primeiro informe alguns dados</h3>
+    <h3>Por favor, informe alguns dados </h3>
     <ion-list>
-
-  <ion-item>
-    <ion-label floating>
-    	<ion-icon name="person"></ion-icon><span> Nome</span>
-	</ion-label>
+      <ion-item>
+      <ion-label floating>
+    	 <ion-icon name="person"></ion-icon><span> Nome</span>
+      </ion-label>
     <ion-input type="text" [(ngModel)]="userInfo.nome"></ion-input>
   </ion-item>
   <ion-item>
@@ -31,12 +30,7 @@
   </ion-item>
    <button ion-button (click)="cadastraNome(userInfo)">Ok</button>
 </ion-list>
+<h3>É rapidinho :D</h3>
   </ion-slide>
-
-  <ion-slide>
-    <h2>Slide 3</h2>
-
-  </ion-slide>
-
 </ion-slides>
 </ion-content>

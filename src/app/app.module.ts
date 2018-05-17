@@ -15,6 +15,7 @@ import { SearchPipe } from '../pipes/search/search';
 import { FotoSlidePage } from '../pages/foto-slide/foto-slide';
 import { MeuPerfilPage } from '../pages/meu-perfil/meu-perfil';
 import { IntroPage } from '../pages/intro/intro';
+import { ConfigsPage } from '../pages/configs/configs';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { IntroPage } from '../pages/intro/intro';
     FavoritosPage,
     FotoSlidePage,
     MeuPerfilPage,
-    IntroPage
+    IntroPage,
+    ConfigsPage
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { IntroPage } from '../pages/intro/intro';
     FavoritosPage,
     FotoSlidePage,
     MeuPerfilPage,
-    IntroPage
+    IntroPage,
+    ConfigsPage
   ],
   providers: [
     StatusBar,

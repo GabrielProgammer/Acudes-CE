@@ -7,6 +7,9 @@
      <button ion-button icon-only color="royal" (click)="meuPerfil()">
         <ion-icon name="person"></ion-icon>
       </button>
+      <button ion-button icon-only color="royal" (click)="configuracoes()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -19,12 +22,12 @@
 	 
   	<ion-item *ngFor='let x of acudes | search: terms' (click)="infoAcudeSelecionado(x)">
   		<ion-avatar item-start>
-  			<img src="../../assets/imgs/acudes/{{x.id}}/{{x.foto}}">
+  			<img src="{{x.foto}}">
   		</ion-avatar>
   		<h3><b>Açude {{ x.nome }}</b></h3>
   	</ion-item>
 </ion-list>
   <ion-fab bottom right>
     <button ion-fab mini (click)="favoritosPage()"><ion-icon name="bookmark"></ion-icon></button>
-  </ion-fab>  
+  </ion-fab>
 </ion-content>
